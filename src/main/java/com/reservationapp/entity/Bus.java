@@ -20,22 +20,14 @@ public class Bus {
 
     private int busId; // Primary Key
 
-    @Column(name="bus_number",unique = true)
     private String busNumber;
     private String busType;
-    private String fromLocation;
-    private String toLocation;
-    private String fromDate;
-    private String toDate;
-    private String totalDuration;
-    private String fromTime;
-    private String toTime;
     private double price;
     private int totalSeats;
     private int availableSeats;
 
-    @OneToOne
-    @JoinColumn(name = "driver_id")
-    private Driver driver;
+    @OneToOne(mappedBy = "bus")
+
+    private Route route;
 
 }

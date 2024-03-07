@@ -1,27 +1,24 @@
 package com.reservationapp.payload;
 
-import com.reservationapp.entity.Driver;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
+
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class BusDto {
-    private int busId; // Primary Key
+
     private String busNumber;
     private String busType;
-    private String fromLocation;
-    private String toLocation;
-    private String  fromDate;
-    private String toDate;
-    private String totalDuration;
-    private String fromTime;
-    private String toTime;
     private double price;
     private int totalSeats;
     private int availableSeats;
-    private Driver driver;
+    private RouteDto route;  // Assuming you also create a RouteDto class
+    private List<SubRouteDto> subRoutes;
+
 }
+
