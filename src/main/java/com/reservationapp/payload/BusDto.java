@@ -1,10 +1,12 @@
 package com.reservationapp.payload;
 
+import com.reservationapp.entity.Driver;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+
 import java.util.List;
 
 @Data
@@ -17,8 +19,6 @@ public class BusDto {
     private double price;
     private int totalSeats;
     private int availableSeats;
-    private RouteDto route;  // Assuming you also create a RouteDto class
-    private List<SubRouteDto> subRoutes;
+
 
 }
-

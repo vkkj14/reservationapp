@@ -1,33 +1,73 @@
 package com.reservationapp.entity;
 
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import javax.persistence.*;
 
-import java.util.Date;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
+@Table(name="bus")
 public class Bus {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-
-     @Id
-     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    private int busId; // Primary Key
-
-    private String busNumber;
-    private String busType;
-    private double price;
-    private int totalSeats;
+    private Long id;
+    @Column(name = "available_seats")
     private int availableSeats;
+    @Column(name = "price")
+    private double price;
+    @Column(name = "total_seats")
+    private int totalSeats;
+    @Column(name = "bus_number")
+    private String busNumber;
+    @Column(name = "bus_type")
+    private String busType;
 
-    @OneToOne(mappedBy = "bus")
+    public Long getId() {
+        return id;
+    }
 
-    private Route route;
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public int getAvailableSeats() {
+        return availableSeats;
+    }
+
+    public void setAvailableSeats(int availableSeats) {
+        this.availableSeats = availableSeats;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getTotalSeats() {
+        return totalSeats;
+    }
+
+    public void setTotalSeats(int totalSeats) {
+        this.totalSeats = totalSeats;
+    }
+
+    public String getBusNumber() {
+        return busNumber;
+    }
+
+    public void setBusNumber(String busNumber) {
+        this.busNumber = busNumber;
+    }
+
+    public String getBusType() {
+        return busType;
+    }
+
+    public void setBusType(String busType) {
+        this.busType = busType;
+    }
 }
+

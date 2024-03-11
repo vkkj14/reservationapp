@@ -1,5 +1,8 @@
 package com.reservationapp.payload;
 
+import com.reservationapp.entity.Route;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,5 +20,9 @@ public class SubRouteDto {
     private String fromTime;
     private String toTime;
 
+
+    @ManyToOne
+    @JoinColumn(name="route_id")
+    private Route route;
 }
 

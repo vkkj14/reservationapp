@@ -17,5 +17,6 @@ public class RouteDto {
     private String fromTime;
     private String toTime;
 
-}
 
+
+}
