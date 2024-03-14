@@ -27,6 +27,6 @@ public class BusService {
         bus.setAvailableSeats(busDto.getAvailableSeats());
 
             Bus savedBus= busRepository.save(bus);
-//
+
         }
     }

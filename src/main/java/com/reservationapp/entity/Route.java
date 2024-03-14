@@ -29,16 +29,6 @@ public class Route {
     @Column(name="bus_id",unique=true,nullable=false)
     private long busId;
 
-//
-//    @OneToOne
-//    @JoinColumn(name="bus_id",referencedColumnName = "id")
-//
-//    private Bus bus;
-
-//    @OneToMany(mappedBy = "route",fetch = FetchType.LAZY)
-//
-//    private List<SubRoute> subRoutes;
-
 
     public Long getId() {
         return id;
